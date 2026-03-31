@@ -19,11 +19,6 @@ public class Beverage {
         return String.format("%-10s | %6.2f.kr | %-2d %n",  this.name, this.price, this.stock);
     }
 
-    public void setName(String name){
-
-        this.name = name;
-    }
-
     public String getName(){
 
         return this.name;
