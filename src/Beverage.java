@@ -27,6 +27,11 @@ public class Beverage {
         return this.name;
     }
 
+    public double getPrice(){
+
+        return this.price;
+    }
+
     public int getStock(){
 
         return this.stock;
