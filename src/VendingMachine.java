@@ -69,6 +69,7 @@ public class VendingMachine {
                     }
                     else{
                         System.out.println("Ok withdrawing " + choice + "..");
+                        tempBev.decreaseStock(choice);
                         cart[cartSize] = new Beverage(tempBev.getName(), tempBev.getPrice(), choice);
                     }
 
