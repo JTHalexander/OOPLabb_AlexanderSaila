@@ -4,10 +4,11 @@ public class VendingMachine {
     private int emptySpot;
     private Beverage[] inv;
 
-    public VendingMachine(){
-        this.capacity = 1;
-        this.emptySpot  = 0;
-        this.inv = new Beverage[capacity];
+    public VendingMachine(Beverage[] beverages){
+
+        this.capacity = beverages.length*2;
+        this.emptySpot  = beverages.length;
+        this.inv = beverages;
     }
 
     public void displayInventory(){
