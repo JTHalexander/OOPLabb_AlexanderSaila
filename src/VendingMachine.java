@@ -10,8 +10,12 @@ public class VendingMachine {
         this.inv = new Beverage[capacity];
     }
 
-    public void showInventory(){
+    public void displayInventory(){
 
+        for(int i=0; i<emptySpot; i++){
+            System.out.printf((i+1) + ". " + this.inv[i].toString());
+        }
+        System.out.println();
     }
 
     public void addBeverage(Beverage bev){
