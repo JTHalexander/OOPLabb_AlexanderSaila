@@ -77,7 +77,7 @@ public class VendingMachine {
                 }
             }
         }
-        //print cart
+        summary(cart, cartSize);
     }
 
     private void summary(Beverage[] cart, int cartSize){
