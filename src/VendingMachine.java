@@ -80,4 +80,21 @@ public class VendingMachine {
         //print cart
     }
 
+    private void summary(Beverage[] cart, int cartSize){
+
+        double totalCost = 0;
+
+        System.out.println("** SUMMARY **");
+
+        for(int i=0; i<cartSize; i++){
+
+            double cost = cart[i].getStock() * cart[i].getPrice();
+            totalCost += cost;
+            System.out.println((i+1)+ ". " + cart[i].getName() + ". Cost: " + cost);
+        }
+
+        System.out.println("Total cost: " + totalCost);
+
+    }
+
 }
