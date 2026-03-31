@@ -26,4 +26,20 @@ public class Beverage {
 
         return this.name;
     }
+
+    public int getStock(){
+
+        return this.stock;
+    }
+
+    public void adjustStock(int amount) {
+        int result = this.stock + amount;
+        if (!(result < 0)) {
+            this.price = result;
+        }
+        else {
+
+            System.out.println("Warning: there are only " + this.stock + " available");
+        }
+    }
 }
