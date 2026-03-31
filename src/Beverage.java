@@ -39,7 +39,8 @@ public class Beverage {
             System.out.println("Cannot take anymore " + this.name);
         }
         else{
-            this.stock--;
+            this.stock -= amount;
+            this.timesSelected++;
         }
     }
 }
