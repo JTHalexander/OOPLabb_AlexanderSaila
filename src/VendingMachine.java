@@ -52,7 +52,7 @@ public class VendingMachine {
             if(choice == 0){
                 break;
             }
-            else if(!(choice < emptySpot)){
+            else if(!(choice < emptySpot) || choice < 0){
                 continue;
             }
             else{
