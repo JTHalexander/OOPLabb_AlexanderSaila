@@ -39,6 +39,10 @@ public class Beverage {
         return this.timesSelected;
     }
 
+    public void increaseStock(int amount){
+        this.stock += amount;
+    }
+
     public void decreaseStock(int amount) {
         if(this.stock == 0){
             System.out.println("Cannot take anymore " + this.name);
