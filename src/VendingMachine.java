@@ -45,8 +45,6 @@ public class VendingMachine {
 
                 while(true) {
 
-                    Beverage tempBev = this.inv[choice-1];
-
                     System.out.printf("You chose " + tempBev.getName() + ".. %nSpecify amount: ");
                     choice = sc.nextInt();
 
