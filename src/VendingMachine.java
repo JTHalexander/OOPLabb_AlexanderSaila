@@ -2,20 +2,18 @@ import java.util.Scanner;
 
 public class VendingMachine {
 
-    private int capacity;
-    private int emptySpot;
+    private int size;
     private Beverage[] inv;
 
     public VendingMachine(Beverage[] beverages){
 
-        this.capacity = beverages.length*2;
-        this.emptySpot  = beverages.length;
+        this.size = beverages.length;
         this.inv = beverages;
     }
 
     public void displayInventory(){
 
-        for(int i=0; i<emptySpot; i++){
+        for(int i = 0; i< size; i++){
             System.out.printf((i+1) + ". " + this.inv[i].toString());
         }
         System.out.println();
@@ -23,7 +21,7 @@ public class VendingMachine {
 
     public void run(){
 
-        Beverage[] cart = new Beverage[emptySpot];
+        Beverage[] cart = new Beverage[size];
         int cartSize = 0;
         Scanner sc = new Scanner(System.in);
 
@@ -37,7 +35,7 @@ public class VendingMachine {
             if(choice == 0){
                 break;
             }
-            else if(!(choice < emptySpot) || choice < 0){
+            else if(!(choice < size) || choice < 0){
                 continue;
             }
             else{
@@ -55,7 +53,7 @@ public class VendingMachine {
                     else{
                         System.out.println("Ok withdrawing " + choice + "..");
                         tempBev.decreaseStock(choice);
-                        cart[cartSize] = new Beverage(tempBev.getName(), tempBev.getPrice(), choice);
+                        cart[cartSize++] = new Beverage(tempBev.getName(), tempBev.getPrice(), choice);
                     }
 
                     break;
