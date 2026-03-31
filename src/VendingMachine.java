@@ -21,21 +21,6 @@ public class VendingMachine {
         System.out.println();
     }
 
-    public void addBeverage(Beverage bev){
-
-        // if current array is too small to fit more beverages, create larger array
-        if(emptySpot == capacity){
-            Beverage[] expandedInv = new Beverage[capacity*2];
-            for(int i=0; i<capacity; i++){
-                expandedInv[i] = this.inv[i];
-            }
-            this.inv = expandedInv;
-            this.capacity *= 2;
-        }
-
-        inv[emptySpot++] = bev;
-    }
-
     public void run(){
 
         Beverage[] cart = new Beverage[emptySpot];
