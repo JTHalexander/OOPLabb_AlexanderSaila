@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class VendingMachine {
 
     private int capacity;
@@ -32,6 +34,49 @@ public class VendingMachine {
         }
 
         inv[emptySpot++] = bev;
+    }
+
+    public void run(){
+
+        Beverage[] cart = new Beverage[emptySpot];
+        int cartSize = 0;
+        Scanner sc = new Scanner(System.in);
+
+        while(true){
+
+            System.out.println("** Make a selection **");
+            displayInventory();
+            System.out.println("Type 0 to check out..");
+            int choice = sc.nextInt();
+
+            if(choice == 0){
+                break;
+            }
+            else if(!(choice < emptySpot)){
+                continue;
+            }
+            else{
+                while(true) {
+
+                    Beverage tempBev = this.inv[choice-1];
+
+                    System.out.printf("You chose " + tempBev.getName() + ".. %nSpecify amount: ");
+                    choice = sc.nextInt();
+
+                    if(choice > tempBev.getStock()){
+                        System.out.println("Sorry you cant withdraw that many..");
+                        continue;
+                    }
+                    else{
+                        System.out.println("Ok withdrawing " + choice + "..");
+                        cart[cartSize] = new Beverage(tempBev.getName(), tempBev.getPrice(), choice);
+                    }
+
+                    break;
+                }
+            }
+        }
+        //print cart
     }
 
 }
