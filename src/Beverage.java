@@ -17,6 +17,11 @@ public class Beverage {
         this.timesSelected = 0;
     }
 
+    @Override
+    public String toString() {
+        return String.format("%-10s | %6.2f.kr | %-2d %n",  this.name, this.price, this.stock);
+    }
+
     public void setName(String name){
 
         this.name = name;
