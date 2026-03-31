@@ -41,6 +41,8 @@ public class VendingMachine {
                 continue;
             }
             else{
+                Beverage tempBev = this.inv[choice-1];
+
                 while(true) {
 
                     Beverage tempBev = this.inv[choice-1];
