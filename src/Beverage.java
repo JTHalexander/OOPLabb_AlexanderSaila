@@ -1,4 +1,3 @@
-import java.util.Random;
 
 public class Beverage {
 
@@ -7,13 +6,11 @@ public class Beverage {
     private int stock;
     private int timesSelected;
 
-    public Beverage(String name, double price){
-
-        Random rand = new Random();
+    public Beverage(String name, double price, int amount){
 
         this.name = name;
         this.price = price;
-        this.stock = rand.nextInt(20) + 1;
+        this.stock = amount;
         this.timesSelected = 0;
     }
 
@@ -42,14 +39,12 @@ public class Beverage {
         return this.stock;
     }
 
-    public void adjustStock(int amount) {
-        int result = this.stock + amount;
-        if (!(result < 0)) {
-            this.price = result;
+    public void decreaseStock(int amount) {
+        if(this.stock == 0){
+            System.out.println("Cannot take anymore " + this.name);
         }
-        else {
-
-            System.out.println("Warning: there are only " + this.stock + " available");
+        else{
+            this.stock--;
         }
     }
 }
