@@ -47,13 +47,18 @@ public class VendingMachine {
                     choice = sc.nextInt();
 
                     if(choice > tempBev.getStock()){
+
                         System.out.println("Sorry you cant withdraw that many..");
                         continue;
                     }
                     else{
+
                         System.out.println("Ok withdrawing " + choice + "..");
                         tempBev.decreaseStock(choice);
-                        cart[cartSize++] = new Beverage(tempBev.getName(), tempBev.getPrice(), choice);
+                        if(addToCart(cart, new Beverage(tempBev.getName(), tempBev.getPrice(), choice), cartSize)){
+                            cartSize++;
+                        }
+
                     }
 
                     break;
@@ -61,6 +66,26 @@ public class VendingMachine {
             }
         }
         summary(cart, cartSize);
+    }
+
+    private boolean addToCart(Beverage[] cart, Beverage beverage, int cartSize){
+
+        boolean foundDuplicate = false;
+        //check for duplicates
+        for(int i=0; i<cartSize; i++){
+
+            if(cart[i].getName().equals(beverage.getName())){
+
+                cart[i].increaseStock(beverage.getStock());
+                foundDuplicate = true;
+                break;
+            }
+        }
+        if(!foundDuplicate){
+            cart[cartSize] = beverage;
+            return true;
+        }
+        return false;
     }
 
     private void summary(Beverage[] cart, int cartSize){
