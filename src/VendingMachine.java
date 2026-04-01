@@ -17,6 +17,7 @@ public class VendingMachine {
         for(Beverage bev : inv){
             System.out.printf("%-10s has been selected -> %d times %n" , bev.getName(), bev.getTimesSelected());
         }
+        System.out.println();
     }
 
     public void displayInventory(){
@@ -106,10 +107,11 @@ public class VendingMachine {
 
             double cost = cart[i].getStock() * cart[i].getPrice();
             totalCost += cost;
-            System.out.println((i+1)+ ". " + cart[i].getName() + ". Cost: " + cost);
+            System.out.println((i+1)+ ". " + cart[i].getName() + ". Cost: " + cost + " (" + cart[i].getStock() + ")");
         }
 
         System.out.println("Total cost: " + totalCost);
+        System.out.println();
 
     }
 
