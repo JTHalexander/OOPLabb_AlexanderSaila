@@ -52,7 +52,6 @@ public class Beverage {
         }
         else{
             this.stock -= amount;
-            this.timesSelected++;
         }
     }
 }
