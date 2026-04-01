@@ -115,4 +115,10 @@ public class VendingMachine {
 
     }
 
+    private void waitForInput(){
+        Scanner pressAny = new Scanner(System.in);
+        System.out.println("Press 'Enter' to continue..");
+        pressAny.nextLine();
+    }
+
 }
