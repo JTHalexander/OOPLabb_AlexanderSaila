@@ -11,6 +11,14 @@ public class VendingMachine {
         this.inv = beverages;
     }
 
+    public void stats(){
+
+        System.out.println("**STATS**");
+        for(Beverage bev : inv){
+            System.out.printf("%-10s has been selected -> %d times %n" , bev.getName(), bev.getTimesSelected());
+        }
+    }
+
     public void displayInventory(){
 
         for(int i = 0; i< size; i++){
