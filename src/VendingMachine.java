@@ -39,7 +39,7 @@ public class VendingMachine {
 
             System.out.println("** Make a selection **");
             displayInventory();
-            System.out.println("Type 0 to check out..");
+            System.out.printf("Type 0 to check out..%nYour choice:");
             int choice = sc.nextInt();
 
             if(choice == 0){
