@@ -18,6 +18,7 @@ public class VendingMachine {
             System.out.printf("%-10s has been selected -> %d times %n" , bev.getName(), bev.getTimesSelected());
         }
         System.out.println();
+        waitForInput();
     }
 
     public void displayInventory(){
@@ -112,6 +113,7 @@ public class VendingMachine {
 
         System.out.println("Total cost: " + totalCost);
         System.out.println();
+        waitForInput();
 
     }
 
